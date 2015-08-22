@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="nytech.co.il.hit.SearchAliasData">
+
+
+
+    <EditText
+        android:padding="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/searchAliasTitle"
+        android:id="@+id/etSearchAlias"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btsearchAlias"
+        android:text="@string/searchAlias"/>
+
+    <TextView
+        android:padding="15dp"
+        android:id="@+id/txtAlias"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:padding="15dp"
+        android:id="@+id/txtUsername"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:padding="15dp"
+        android:id="@+id/txtPassword"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

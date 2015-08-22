@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Hit</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_register">Register</string>
+    <string name="signin_error_message">Please make sure you enter full name ,
+     username , password and email address</string>
+    <string name="signin_error_title">Oops!</string>
+    <string name="title_activity_myclass">Myclass</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="welcome_log">Welcome You Just Login!</string>
+    <string name="title_activity_fragment_">fragment_Activity</string>
+    <string name="title_activity_main_screen">MainScreen</string>
+    <string name="title_activity_add_new_data">AddnewData</string>
+    <string name="title_activity_data_show">DataShow</string>
+    <string name="newItem">New</string>
+    <string name="edit">Edit</string>
+    <string name="del">Delete</string>
+    <string name="search">Search</string>
+    <string name="showall">Show All</string>
+    <string name="logoff">SignOut</string>
+    <string name="txtUserName">Enter User Name:</string>
+    <string name="txtAlias">Enter Alias Name:</string>
+    <string name="txtPassword">Enter Your Password:</string>
+    <string name="txtTitleNewData">Add New Item:</string>
+    <string name="btSaveIten">Save New Item</string>
+    <string name="userName">USER NAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="login">Login</string>
+    <string name="signIn">Sign In Here</string>
+    <string name="searchAlias">SEARCH ALIAS</string>
+    <string name="deleteAlias">Delete ALIAS</string>
+    <string name="searchAliasTitle">please enter Your Alias to Search:</string>
+    <string name="deleteAliasTitle">please enter Your Alias to Delete:</string>
+
+
+</resources>

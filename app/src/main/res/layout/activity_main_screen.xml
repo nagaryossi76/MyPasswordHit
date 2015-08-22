@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:context="nytech.co.il.hit.MainScreen">
+
+
+   <RelativeLayout
+       android:id="@+id/frmenubar"
+       android:layout_width="fill_parent"
+       android:layout_height="100dp">
+       <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btNew"
+        android:text="@string/newItem"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+       <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btEdit"
+        android:text="@string/edit"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btDel"
+        android:text="@string/del"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/btSearch"
+        android:text="@string/search"
+        android:layout_below="@+id/btNew"
+        android:layout_alignStart="@+id/btNew"/>
+
+       <Button
+           android:layout_width="100dp"
+           android:layout_height="wrap_content"
+           android:id="@+id/btShow"
+           android:text="@string/showall"
+           android:layout_below="@+id/btEdit"
+           android:layout_alignStart="@+id/btEdit"/>
+
+       <Button
+           android:layout_width="100dp"
+           android:layout_height="wrap_content"
+           android:text="@string/logoff"
+           android:id="@+id/btLogoff"
+           android:layout_below="@+id/btDel"
+           android:layout_alignEnd="@+id/btDel"/>
+   </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/frscreen"
+        android:layout_width="fill_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/frmenubar">
+</RelativeLayout>
+
+
+    </RelativeLayout>

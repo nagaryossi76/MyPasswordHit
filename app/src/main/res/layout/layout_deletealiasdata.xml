@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="nytech.co.il.hit.DeleteAliasData">
+
+
+
+    <EditText
+        android:padding="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/deleteAliasTitle"
+        android:id="@+id/etDeleteAlias"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btDeleteAlias"
+        android:text="@string/deleteAlias"/>
+
+
+</LinearLayout>
