@@ -6,6 +6,7 @@ import com.parse.Parse;
 
 /**
  * Created by top on 02/08/2015.
+ * Hello GitHub :)
  */
 public class RibbitApplication extends Application {
     public static final String MYTAG = "my_debug_tag";
