@@ -31,7 +31,9 @@
             android:name=".MainScreen"
             android:label="@string/title_activity_main_screen" >
         </activity>
-
+        <provider android:name=".MyContentProvider"
+                  android:authorities="il.co.nytech.provider.Alias">
+        </provider>
 
     </application>
 

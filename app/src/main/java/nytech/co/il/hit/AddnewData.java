@@ -1,6 +1,5 @@
 package nytech.co.il.hit;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,7 +11,8 @@ import android.widget.EditText;
 /**
  * Created by top on 09/08/2015.
  */
-public class AddnewData extends Fragment implements View.OnClickListener {
+public class AddnewData extends android.app.Fragment implements View.OnClickListener{
+
     EditText etNAlias, etNUserName, etNPassword;
     Button btNSaveItem;
 
@@ -24,11 +24,11 @@ public class AddnewData extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.layout_addnewdata, container, false);
 
+
         btNSaveItem = (Button) v.findViewById(R.id.btNSaveItem);
         etNAlias = (EditText)v.findViewById(R.id.etNAlias);
         etNUserName = (EditText)v.findViewById(R.id.etNUserName);
         etNPassword = (EditText)v.findViewById(R.id.etNPassword);
-
 
         btNSaveItem.setOnClickListener(this);
         return v;
@@ -43,6 +43,7 @@ public class AddnewData extends Fragment implements View.OnClickListener {
                 String alias = etNAlias.getText().toString();
                 String username = etNUserName.getText().toString();
                 String password = etNPassword.getText().toString();
+
                 Log.d(MYTAG, "open my DB");
                 entry.open();
                 Log.d(MYTAG, "opened my DB");
@@ -55,8 +56,23 @@ public class AddnewData extends Fragment implements View.OnClickListener {
                 etNUserName.setText(" ");
                 etNPassword.setText(" ");
                 break;
+
+                // Add a new birthday record
+/*
+                ContentValues values = new ContentValues();
+                values.put(MyContentProvider.KEY_ALIAS, alias);
+                values.put(MyContentProvider.KEY_USER_NAME,username);
+                values.put(MyContentProvider.KEY_PASSWORD, password);
+
+                Uri uri = getContentResolver().insert(
+                        MyContentProvider.CONTENT_URI, values);
+
+                Toast.makeText(getBaseContext(),
+                        "NyTech: " + uri.toString()
+                        + " inserted!", Toast.LENGTH_LONG).show(); */
         }
     }
+
 
 
 }

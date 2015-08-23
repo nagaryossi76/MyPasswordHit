@@ -14,6 +14,8 @@ import com.parse.ParseUser;
 
 public class MainScreen extends Activity {
 
+
+
     private static final String MYTAG = "my_debug_tag";
     public Button btNew, btEdit, btSearch, btShow, btDelete, btLogoff, btNSaveItem;
 

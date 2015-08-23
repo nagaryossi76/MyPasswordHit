@@ -12,16 +12,16 @@ import android.util.Log;
  */
 public class MyDatabase {
 
-    private static final String MYTAG = "my_debug_tag";
+    public static final String MYTAG = "my_debug_tag";
     private static final String DEBUG_TAG = "PasswordDatabase";
     private static final String KEYֹROWID = "_id";
     private static final String KEY_ALIAS = "alias";
     private static final String KEY_USER_NAME = "user_Name";
     private static final String KEY_PASSWORD = "password";
 
-    private static final String DATABASE_NAME = "passwordDb";
-    private static final String DATABASE_TABLE = "passwordTable";
-    private static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "passwordDb";
+    public static final String DATABASE_TABLE = "passwordTable";
+    public static final int DATABASE_VERSION = 1;
 
     private PasswordDatabase ourHelper;
     private final Context ourContext;
