@@ -21,35 +21,36 @@ import java.util.HashMap;
  *
  */
 public class MyContentProvider extends ContentProvider {
-    // fields for my content provider
-    static final String PROVIDER_NAME = "il.co.nytech.provider.Alias";
-    static final String URL = "content://" + PROVIDER_NAME + "/friends";
+    /* fields for my content provider */
+    static final String PROVIDER_NAME = "il.co.nytech.provider";
+    static final String URL = "content://" + PROVIDER_NAME + "/alias";
     static final Uri CONTENT_URI = Uri.parse(URL);
 
-    // fields for the database
+    /* fields for the database */
     static final String KEY_ROWID = "id";
     static final String KEY_ALIAS = "alias";
     static final String KEY_USER_NAME = "username";
     static final String KEY_PASSWORD = "password";
 
-    // integer values used in content URI
+    /* integer values used in content URI */
     static final int ALIAS = 1;
     static final int ALIAS_ITEM = 2;
 
+    /* our Helper to work with DB */
     DBHelper dbHelper;
 
     // projection map for a query
-    private static HashMap<String, String> BirthMap;
+    private static HashMap<String, String> values;
 
     // maps content URI "patterns" to the integer values that were set above
     static final UriMatcher uriMatcher;
     static{
         uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        uriMatcher.addURI(PROVIDER_NAME, "friends", ALIAS);
-        uriMatcher.addURI(PROVIDER_NAME, "friends/#", ALIAS_ITEM);
+        uriMatcher.addURI(PROVIDER_NAME, "alias", ALIAS);
+        uriMatcher.addURI(PROVIDER_NAME, "alias/#", ALIAS_ITEM);
     }
 
-    // database declarations
+    /* database declarations */
     private SQLiteDatabase database;
     static final String DATABASE_NAME = "AliasDb";
     static final String TABLE_NAME = "AliasTable";
@@ -62,7 +63,7 @@ public class MyContentProvider extends ContentProvider {
                     KEY_PASSWORD + " TEXT NOT NULL);";
 
 
-    // class that creates and manages the provider's database
+    /* class that creates and manages the provider's database */
     private static class DBHelper extends SQLiteOpenHelper {
 
         public DBHelper(Context context) {
@@ -85,9 +86,10 @@ public class MyContentProvider extends ContentProvider {
             db.execSQL("DROP TABLE IF EXISTS " +  TABLE_NAME);
             onCreate(db);
         }
-
     }
 
+
+    /* Implement  our Content Provider methods */
     @Override
     public boolean onCreate() {
         // TODO Auto-generated method stub
@@ -113,7 +115,7 @@ public class MyContentProvider extends ContentProvider {
         switch (uriMatcher.match(uri)) {
             // maps all database column names
             case ALIAS:
-                queryBuilder.setProjectionMap(BirthMap);
+                queryBuilder.setProjectionMap(values);
                 break;
             case ALIAS_ITEM:
                 queryBuilder.appendWhere( KEY_ROWID + "=" + uri.getLastPathSegment());
