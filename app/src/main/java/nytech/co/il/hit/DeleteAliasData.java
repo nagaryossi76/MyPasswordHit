@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by top on 19/08/2015.
@@ -47,6 +48,10 @@ public class DeleteAliasData extends Fragment implements View.OnClickListener {
                     Log.d(MYTAG, "Entered my DB");
                     delitem.close();
                     Log.d(MYTAG, "closed my DB");
+                    etDeleteAlias.setHint(R.string.deleteAlias);
+
+                    Toast.makeText(getActivity(), "Your Alias " + alias + " Remove From DB!",
+                            Toast.LENGTH_SHORT).show();
                     break;
                 }catch (Exception e){
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());

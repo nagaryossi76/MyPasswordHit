@@ -36,6 +36,8 @@
     <string name="deleteAlias">Delete ALIAS</string>
     <string name="searchAliasTitle">please enter Your Alias to Search:</string>
     <string name="deleteAliasTitle">please enter Your Alias to Delete:</string>
+    <string name="txtTitleApp">Remember Me!</string>
+
 
 
 </resources>

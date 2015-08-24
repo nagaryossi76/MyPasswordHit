@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by top on 09/08/2015.
@@ -52,9 +53,11 @@ public class AddnewData extends android.app.Fragment implements View.OnClickList
                 Log.d(MYTAG, "Entered my DB");
                 entry.close();
                 Log.d(MYTAG, "closed my DB");
-                etNAlias.setText(" ");
-                etNUserName.setText(" ");
-                etNPassword.setText(" ");
+                etNAlias.setText("");
+                etNUserName.setText("");
+                etNPassword.setText("");
+                Toast.makeText(getActivity(), "New Alias " + alias + " Add to DB!",
+                        Toast.LENGTH_SHORT).show();
                 break;
 
                 // Add a new birthday record
