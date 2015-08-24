@@ -23,9 +23,9 @@ public class MyDatabase {
     public static final String DATABASE_TABLE = "passwordTable";
     public static final int DATABASE_VERSION = 1;
 
-    private PasswordDatabase ourHelper;
+    public PasswordDatabase ourHelper;
     private final Context ourContext;
-    private SQLiteDatabase ourDatabase;
+    public SQLiteDatabase ourDatabase;
 
 
     private static class PasswordDatabase extends SQLiteOpenHelper {

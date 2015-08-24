@@ -4,13 +4,10 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.ContentValues;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.parse.ParseUser;
 
@@ -48,15 +45,15 @@ public class MainScreen extends Activity {
                 switch (v.getId()){
                     case R.id.btNew:
                         /* this part replace Fragment to NewItem Fragment */
-                 /*       Fragment frNew;
+                        Fragment frNew;
                         frNew = new AddnewData();
                         FragmentManager fmNew = getFragmentManager();
                         FragmentTransaction ftNew = fmNew.beginTransaction();
                         ftNew.replace(R.id.frscreen, frNew);
                         ftNew.commit();
-                        Log.d(MYTAG, "new Fragment AddnewData"); */
+                        Log.d(MYTAG, "new Fragment AddnewData");
 
-                        ContentValues values = new ContentValues();
+                    /*    ContentValues values = new ContentValues();
                         values.put(MyContentProvider.KEY_ALIAS, "Bank Poalim");
                         values.put(MyContentProvider.KEY_USER_NAME, "my user");
                         values.put(MyContentProvider.KEY_PASSWORD, "my password");
@@ -64,7 +61,7 @@ public class MainScreen extends Activity {
                                 (MyContentProvider.CONTENT_URI, values);
                         Toast.makeText(getBaseContext(), "New record inserted"
                                 , Toast.LENGTH_LONG)
-                                .show();
+                                .show();  */
 
 
 
