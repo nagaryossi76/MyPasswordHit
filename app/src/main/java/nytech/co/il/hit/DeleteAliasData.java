@@ -48,7 +48,7 @@ public class DeleteAliasData extends Fragment implements View.OnClickListener {
                     Log.d(MYTAG, "Entered my DB");
                     delitem.close();
                     Log.d(MYTAG, "closed my DB");
-                    etDeleteAlias.setHint(R.string.deleteAlias);
+                    etDeleteAlias.setText("");
 
                     Toast.makeText(getActivity(), "Your Alias " + alias + " Remove From DB!",
                             Toast.LENGTH_SHORT).show();
