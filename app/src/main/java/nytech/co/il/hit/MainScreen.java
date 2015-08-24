@@ -5,9 +5,12 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.parse.ParseUser;
 
@@ -17,7 +20,8 @@ public class MainScreen extends Activity {
 
 
     private static final String MYTAG = "my_debug_tag";
-    public Button btNew, btEdit, btSearch, btShow, btDelete, btLogoff, btNSaveItem;
+    public Button  btEdit,  btShow, btNSaveItem;
+    public ImageButton btSearch, btNew, btDelete, btLogoff;
 
 
 
@@ -31,12 +35,12 @@ public class MainScreen extends Activity {
         setContentView(R.layout.activity_main_screen);
 
         /* initialize our buttons*/
-        btNew = (Button)findViewById(R.id.btNew);
-        btDelete = (Button)findViewById(R.id.btDel);
+        btNew = (ImageButton)findViewById(R.id.btNew);
+        btDelete = (ImageButton)findViewById(R.id.btDel);
         btEdit = (Button)findViewById(R.id.btEdit);
-        btSearch = (Button)findViewById(R.id.btSearch);
+        btSearch = (ImageButton)findViewById(R.id.btSearch);
         btShow = (Button)findViewById(R.id.btShow);
-        btLogoff = (Button)findViewById(R.id.btLogoff);
+        btLogoff = (ImageButton)findViewById(R.id.btLogoff);
 
         listener = new View.OnClickListener(){
             @Override
@@ -47,11 +51,8 @@ public class MainScreen extends Activity {
                         /* this part replace Fragment to NewItem Fragment */
                         Fragment frNew;
                         frNew = new AddnewData();
-                        FragmentManager fmNew = getFragmentManager();
-                        FragmentTransaction ftNew = fmNew.beginTransaction();
-                        ftNew.replace(R.id.frscreen, frNew);
-                        ftNew.commit();
-                        Log.d(MYTAG, "new Fragment AddnewData");
+                        addFragment(frNew);
+
 
                     /*    ContentValues values = new ContentValues();
                         values.put(MyContentProvider.KEY_ALIAS, "Bank Poalim");
@@ -73,41 +74,38 @@ public class MainScreen extends Activity {
                          /* this part replace Fragment to Search Alias Fragment */
                         Fragment frDel;
                         frDel = new DeleteAliasData();
-                        FragmentManager fmDel = getFragmentManager();
-                        FragmentTransaction ftDel = fmDel.beginTransaction();
-                        ftDel.replace(R.id.frscreen, frDel);
-                        ftDel.commit();
-                        Log.d(MYTAG, "new Fragment Delete Alias");
-
-
+                        addFragment(frDel);
                         break;
                     case R.id.btSearch:
                         /* this part replace Fragment to Search Alias Fragment */
                         Fragment frSearch;
                         frSearch = new SearchAliasData();
-                        FragmentManager fmSearch = getFragmentManager();
-                        FragmentTransaction ftSearch = fmSearch.beginTransaction();
-                        ftSearch.replace(R.id.frscreen, frSearch);
-                        ftSearch.commit();
-                        Log.d(MYTAG, "new Fragment Search Alias");
-
+                        addFragment(frSearch);
                         break;
                     case R.id.btShow:
                         /* this part replace Fragment to DataShow Fragment */
                         Fragment frShow;
                         frShow = new DataShow();
-                        FragmentManager fmShow = getFragmentManager();
-                        FragmentTransaction ftShow = fmShow.beginTransaction();
-                        ftShow.replace(R.id.frscreen, frShow);
-                        ftShow.commit();
-                        Log.d(MYTAG, "new Fragment ShowData");
-
+                        addFragment(frShow);
                         break;
                     case R.id.btLogoff:
                         Log.d(MYTAG, "see you ...");
-                        ParseUser.logOut();
-                        // this will now be null
-                        ParseUser currentUser = ParseUser.getCurrentUser();
+                        Toast.makeText(MainScreen.this, "I Hope to See You Aagin!",
+                                Toast.LENGTH_SHORT).show();
+                        final Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                // Do something after 5s = 5000ms
+                                ParseUser.logOut();
+                                // this will now be null
+                                ParseUser currentUser = ParseUser.getCurrentUser();
+                                finish();
+                            }
+                        }, 1500);
+
+
+
                         break;
                 }
             }
@@ -120,7 +118,15 @@ public class MainScreen extends Activity {
         btShow.setOnClickListener(listener);
         btLogoff.setOnClickListener(listener);
     }
- }
+    /* add Fragment to main screen */
+    private void addFragment(Fragment fragment) {
+        FragmentManager fmNew = getFragmentManager();
+        FragmentTransaction ftNew = fmNew.beginTransaction();
+        ftNew.replace(R.id.frscreen, fragment);
+        ftNew.commit();
+        Log.d(MYTAG, "new Fragment!!!");
+    }
+}
 
 
 

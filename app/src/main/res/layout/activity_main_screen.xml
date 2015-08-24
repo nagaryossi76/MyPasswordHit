@@ -20,15 +20,22 @@
            android:id="@+id/textView"
            android:layout_above="@+id/btEdit"
            android:layout_toStartOf="@+id/btDel"
-           android:layout_alignEnd="@+id/btDel"/>
+           android:layout_alignEnd="@+id/btDel"
+           android:autoText="false"
+           android:padding="5dp"
+           android:gravity="center_horizontal"/>
 
-       <Button
+       <ImageButton
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/btNew"
-        android:text="@string/newItem"
+        android:padding="5dp"
+        android:src="@drawable/createnew"
+        android:background="@null"
+
         android:layout_above="@+id/btSearch"
         android:layout_alignParentStart="true"/>
+
        <Button
         android:layout_width="100dp"
         android:layout_height="wrap_content"
@@ -37,20 +44,24 @@
         android:layout_above="@+id/btShow"
         android:layout_centerHorizontal="true"/>
 
-    <Button
+    <ImageButton
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/btDel"
-        android:text="@string/del"
+        android:padding="5dp"
+
+        android:src="@drawable/delete"
         android:layout_above="@+id/btLogoff"
+        android:background="@null"
         android:layout_alignParentEnd="true"/>
 
-    <Button
+    <ImageButton
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:id="@+id/btSearch"
-        android:text="@string/search"
+        android:src="@drawable/searchnew"
         android:layout_alignParentBottom="true"
+        android:background="@null"
         android:layout_alignParentStart="true"/>
 
        <Button
@@ -61,11 +72,13 @@
            android:layout_alignParentBottom="true"
            android:layout_alignStart="@+id/btEdit"/>
 
-       <Button
+       <ImageButton
            android:layout_width="100dp"
            android:layout_height="wrap_content"
-           android:text="@string/logoff"
+           android:src="@drawable/exit"
            android:id="@+id/btLogoff"
+           android:background="@null"
+
            android:layout_alignParentBottom="true"
            android:layout_alignStart="@+id/btDel"/>
 
@@ -75,6 +88,7 @@
 
     <RelativeLayout
         android:id="@+id/frscreen"
+        android:padding="15dp"
         android:layout_width="fill_parent"
         android:layout_height="400dp"
         android:layout_below="@id/frmenubar">
