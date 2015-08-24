@@ -64,6 +64,10 @@ public class SearchAliasData extends Fragment implements View.OnClickListener{
                     txtUsername.setText("User Name: " + returnUsername);
                     txtPassword.setText("Password: " + returnPassword);
                     Log.d(MYTAG, "print details of the alias on scree");
+                    etSearchAlias.setText("");
+
+
+
                     break;
                 }catch (Exception e){
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());

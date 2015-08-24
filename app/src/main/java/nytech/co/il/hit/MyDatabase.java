@@ -90,7 +90,7 @@ public class MyDatabase {
         int i = 0;
         for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()) {
 
-            result[i] = c.getString(iRow) + ". " + "Alias : " + " " + c.getString(iAlias) + "\n    User Name :" +
+            result[i] = i + 1 + ". " + "Alias : " + " " + c.getString(iAlias) + "\n    User Name :" +
                     " " + c.getString(iUsername) + "\n    Password :" + " " + c.getString(iPassword);
             i = i + 1;
         }
