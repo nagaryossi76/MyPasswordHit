@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/btNew"
         android:padding="5dp"
-        android:src="@drawable/createnew"
+        android:src="@drawable/addnew"
         android:background="@null"
 
         android:layout_above="@+id/btSearch"

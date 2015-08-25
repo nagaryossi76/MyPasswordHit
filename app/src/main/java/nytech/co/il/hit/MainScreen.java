@@ -98,7 +98,7 @@ public class MainScreen extends Activity {
                             public void run() {
                                 // Do something after 5s = 5000ms
                                 ParseUser.logOut();
-                                // this will now be null
+                               // this will now be null
                                 ParseUser currentUser = ParseUser.getCurrentUser();
                                 finish();
                             }
